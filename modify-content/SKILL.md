@@ -1,31 +1,37 @@
 ---
 name: modify-content
-description: Use before modifying any persistent file or resource.
+description: Use before modifying persistent files or resources that are not tracked by Git.
 ---
 
-以下會改變正式檔案或持久化資源的操作視為修改：新增、編輯、刪除、覆蓋、搬移或重新命名檔案，變更設定、skill、文件或程式碼，以及透過 connector 建立、更新、刪除或送出持久化資源。
+## 適用範圍
 
-## 免確認產物
+不套用本 skill：
 
-以下寫入不需準備 diff 或取得使用者同意：
-
-- 僅供修改預覽使用的私人暫存檔，包括 before / after 檔案。
+- 修改前已被 Git 追蹤的檔案
+- 用於本 skill diff 預覽的 before / after 暫存檔
 - Agent review 的通訊與執行紀錄：
   - `*_reviewed_by_<agent>.md`
   - `*_responsed_by_<agent>.md`
   - `.auto-review/**`
 
-## 修改前
+必須套用本 skill：
 
-- 說明正式目標、預計變更與完成後的樣子。
-- 修改文字檔時，將修改前內容寫入 before 暫存檔，將預計修改後內容寫入 after 暫存檔，再執行 `code --diff <before> <after>`。
+- 修改前未被 Git 追蹤的檔案
+- 不屬於 Git worktree 的持久化檔案或資源
+- 透過 connector、API 或 UI 建立、更新、刪除或送出的外部持久化資源，包括文件、表單、Sheet 與設定
+
+同一批修改有多種目標時，只對必須套用本 skill 的目標執行本流程。
+
+## 確認前
+
+- 說明修改目標、預計變更與完成後的結果。
+- 修改文字檔時，將目前內容寫入 before 暫存檔，將預計內容寫入 after 暫存檔，再執行 `code --diff <before> <after>`。
 - 新增文字檔時，before 暫存檔留白；刪除文字檔時，after 暫存檔留白。
-- 同一批有多個文字檔時，所有 before 與 after 檔案放在同一個暫存目錄並使用不同檔名；前一個 diff 開啟完成後，再依序為其餘檔案各執行一次 `code --diff <before> <after>`。
+- 同一批有多個文字檔時，將所有暫存檔放在同一個目錄並使用不同檔名，再依序開啟每個 diff。
 - 無法以文字 diff 呈現時，說明原因並提供可確認的替代方式。
-- 顯示 diff 後，取得使用者對該 diff 的明確同意；先前對計畫、方向或檔案範圍的同意不能取代這一步。
+- 開啟所有 diff 後，取得使用者對該 diff 的明確同意再修改正式目標；對計畫、方向或檔案範圍的同意不能取代此同意。
 
-## 修改與驗證
+## 確認後
 
-- 同意前，不得變更正式目標或執行會間接寫入它的操作。
-- 同意後，只套用已確認的變更；發現額外需求時，重新確認。
-- 完成後，確認結果符合已同意的內容，且沒有額外變更；回報目標與驗證結果。
+- 只套用已確認的變更；發現額外需求時，重新執行確認流程。
+- 完成後驗證正式目標符合 diff，並回報驗證結果。
