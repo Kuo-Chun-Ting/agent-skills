@@ -25,6 +25,7 @@ description: Use before modifying persistent files or resources that are not tra
 ## 確認前
 
 - 說明修改目標、預計變更與完成後的結果。
+- 建立 before / after 暫存檔時，使用 `/private/tmp/modify-content-*/`。
 - 修改文字檔時，將目前內容寫入 before 暫存檔，將預計內容寫入 after 暫存檔，再執行 `code --diff <before> <after>`。
 - 新增文字檔時，before 暫存檔留白；刪除文字檔時，after 暫存檔留白。
 - 同一批有多個文字檔時，將所有暫存檔放在同一個目錄並使用不同檔名，再依序開啟每個 diff。
