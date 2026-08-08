@@ -1,15 +1,16 @@
 ---
 name: coding-principle
-description: Use when writing or reviewing code structure, naming, function boundaries, method visibility, and class organization.
+description: Use when writing or reviewing code or structured configuration.
 ---
 
 # Coding Principle
 
-用於撰寫或 review 程式碼。
+用於撰寫或 review 程式碼與結構化設定。
 
 ## 規則
 
 - Follow clean code 原則，優先確保命名清楚、降層明確、程式由上往下像讀報紙一樣容易閱讀。
+- 將語意相關的程式碼或設定項目連續排列，讓閱讀順序反映它們的關係。
 - Function / method 應只處理同一個抽象層次；高層 function 描述流程，低層 function 處理細節，避免在同一段程式混合流程控制、資料轉換、外部呼叫和低階實作。
 - Function / method 應加上 typing，包含參數與 return type；若型別來自外部套件或動態物件，優先使用既有專案可 import 的具體型別。
 - Function / method 原則上保持短小，約 20-30 行內較容易閱讀；超過 40 行時應檢查是否混合多個抽象層次或職責。
