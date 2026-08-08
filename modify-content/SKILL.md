@@ -1,6 +1,6 @@
 ---
 name: modify-content
-description: Use before modifying persistent files or resources that are not tracked by Git.
+description: Use when the user says "給我 diff", or before modifying persistent files or resources that are not tracked by Git.
 ---
 
 ## 適用範圍
