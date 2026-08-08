@@ -26,6 +26,7 @@ description: Use before modifying persistent files or resources that are not tra
 
 - 說明修改目標、預計變更與完成後的結果。
 - 建立 before / after 暫存檔時，使用 `/private/tmp/modify-content-*/`。
+- 暫存檔以檔案寫入工具建立（Claude Code 用 Write，Codex 用 apply_patch）；工具無法寫入該路徑時才用 shell 重導向。
 - 修改文字檔時，將目前內容寫入 before 暫存檔，將預計內容寫入 after 暫存檔，再執行 `code --diff <before> <after>`。
 - 新增文字檔時，before 暫存檔留白；刪除文字檔時，after 暫存檔留白。
 - 同一批有多個文字檔時，將所有暫存檔放在同一個目錄並使用不同檔名，再依序開啟每個 diff。
@@ -36,3 +37,4 @@ description: Use before modifying persistent files or resources that are not tra
 
 - 只套用已確認的變更；發現額外需求時，重新執行確認流程。
 - 完成後驗證正式目標符合 diff，並回報驗證結果。
+- 使用者同意、正式修改完成並驗證後，刪除該次 `/private/tmp/modify-content-*/` 暫存目錄。
