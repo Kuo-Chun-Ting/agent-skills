@@ -1,13 +1,13 @@
 ---
 name: modify-content
-description: Use when the user says "給我 diff", or before modifying persistent files or resources that are not tracked by Git.
+description: Use when the user says "給我 diff", or before modifying persistent files or resources that are ignored by Git or outside a Git worktree.
 ---
 
 ## 適用範圍
 
 不套用本 skill：
 
-- 修改前已被 Git 追蹤的檔案
+- 位於 Git worktree 且未被 Git ignore 或 exclude 的檔案，不論是否已追蹤或 stage
 - 用於本 skill diff 預覽的 before / after 暫存檔
 - Agent review 的通訊與執行紀錄：
   - `*_reviewed_by_<agent>.md`
@@ -16,7 +16,7 @@ description: Use when the user says "給我 diff", or before modifying persisten
 
 必須套用本 skill：
 
-- 修改前未被 Git 追蹤的檔案
+- 被 Git ignore 或 exclude 的檔案
 - 不屬於 Git worktree 的持久化檔案或資源
 - 透過 connector、API 或 UI 建立、更新、刪除或送出的外部持久化資源，包括文件、表單、Sheet 與設定
 
