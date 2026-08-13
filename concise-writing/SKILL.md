@@ -16,6 +16,7 @@ description: Use when writing or editing any user-facing or agent-facing text, i
 5. 只有內容混有多個 high-level 概念時，才拆 section。
 6. 不要過早拆 section；如果內容只有一種概念，直接用一層條列寫完。
 7. section 層級沒有固定上限，但每一層都必須代表真實的概念分組。
+8. 修改既有內容後，檢查原本的組織方式與表達邏輯是否仍適用；只有不再適用時，才重構受影響的部分。
 
 ## 必要性
 
