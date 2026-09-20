@@ -24,6 +24,7 @@ description: Use when writing or editing any user-facing or agent-facing text, i
 2. 只寫讀者理解、判斷或行動需要的內容。
 3. 如果一句話刪掉後不影響讀者理解或行動，就刪掉。
 4. 如果某個 section 沒有獨立判斷價值，合併到其他 section 或刪掉。
+5. 除非使用者要求或既有格式需要，不要自行加入 emoji、icon、cover、callout、顏色或裝飾性分隔線。
 
 ## 移除討論痕跡
 
