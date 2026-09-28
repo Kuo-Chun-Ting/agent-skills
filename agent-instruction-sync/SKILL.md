@@ -1,6 +1,6 @@
 ---
 name: agent-instruction-sync
-description: Use when creating, editing, or deploying custom agent instructions or skills shared by Codex and Claude.
+description: Use when creating, editing, deploying, or installing agent instructions or skills shared by Codex and Claude.
 ---
 
 ## Agent 指令
@@ -16,6 +16,10 @@ description: Use when creating, editing, or deploying custom agent instructions 
 - Claude 使用 `~/.claude/skills/{skill_name}` 指向實體來源的 symlink。
 - 新增或部署 skill 時，在 repo 執行 `./deploy-skill.sh {skill_name}`。
 - 修改 skill 時直接修改實體來源；部署路徑只需確認 symlink。
+
+## 第三方 skill
+
+- 分別安裝到 Codex 的 `~/.codex/skills/{skill_name}` 與 Claude Code 的 `~/.claude/skills/{skill_name}`。
 
 ## 驗證
 
