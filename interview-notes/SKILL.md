@@ -15,7 +15,7 @@ description: Use when creating or updating a company's interview note in Notion.
    - `Questions`
 
 - 兩個版本各自使用獨立子頁，不使用 Notion tabs，也不放在母頁作為兩組 heading。子頁內的 heading 都用英文。
-- `Introduction` 直接使用 [self-introductions.md](references/self-introductions.md) 的對應版本。
+- `Introduction` 直接使用 [self-introductions.md](assets/self-introductions.md) 的對應版本。
 - 寫 `Why {company}` 前，先讀 [job-preferences.md](references/job-preferences.md)，再對照公司與職缺內容。選擇符合的部分，寫成可以直接回答的內容。
 - 英文版和中文版表達相同意思，不中英交錯。
 - `Questions` 固定使用以下問題：
