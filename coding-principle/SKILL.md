@@ -10,6 +10,7 @@ description: Use when writing or reviewing code or structured configuration.
 ## 規則
 
 - Follow clean code 原則，優先確保命名清楚、降層明確、程式由上往下像讀報紙一樣容易閱讀。
+- 新增功能時，優先遵循開放封閉原則，透過擴充既有介面加入新實作，減少修改既有邏輯。
 - 將語意相關的程式碼或設定項目連續排列，讓閱讀順序反映它們的關係。
 - Function / method 應只處理同一個抽象層次；高層 function 描述流程，低層 function 處理細節，避免在同一段程式混合流程控制、資料轉換、外部呼叫和低階實作。
 - Function / method 應加上 typing，包含參數與 return type；若型別來自外部套件或動態物件，優先使用既有專案可 import 的具體型別。
