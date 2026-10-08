@@ -26,3 +26,7 @@ description: Use when writing or reviewing code or structured configuration.
 - Function / method 命名要表達同一層抽象的行為意圖，預設用動詞開頭。
 - Class / file / module 命名要表達身份或職責，預設用名詞。
 - Airflow `task_id` 表示 workflow step，預設用動詞開頭，例如 `build-*`、`create-*`、`run-*`。
+
+## 補充規則
+
+- 修正問題時，新增條件判斷前，先查明是哪段程式造成問題。若新條件只是用來避開另一段自訂邏輯造成的錯誤，優先修正或移除那段邏輯；平台或既有元件已提供所需行為時，優先沿用。只有確認原有邏輯仍需保留，且新條件對應實際需求時，才保留原有邏輯並新增條件。
